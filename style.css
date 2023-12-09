@@ -1,23 +1,14 @@
-:root {
-  --White: #fff;
-  --Black: #000;
-  --Bg-gray: rgba(246, 247, 252, 1);
-  --Blue-Base: #2f7ef3;
-  --Text-black: #24262e;
-  --Dark-gray: #686e80;
-  --Light-gray: #a1a7bd;
-  --Text-dark-gray: #3b3f4f;
-  --Gray-border: #e4e5ec;
-  --Neutrals-1: #515865;
-  --Primary-green: #1db954;
-  --Neutrals-2: #f2f4ff;
-  --Dark-blue: #423390;
+@import url('./styles/variables.css');
+@import url('./styles/utils.css');
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   box-sizing: border-box;
   margin: 0;
-  font-family: "Poppins", sans-serif;
 }
 
 .header {
@@ -28,7 +19,6 @@ body {
   max-width: 600px;
   margin: 0 auto;
   padding-inline: 16px;
-  padding-bottom: 24px;
 
   @media screen and (min-width: 1257px) {
     padding-inline: 64px;
@@ -42,6 +32,15 @@ body {
   height: 48px;
   padding: 8px 0;
   box-shadow: 0px 8px 16px -8px rgba(15, 15, 15, 0.1);
+}
+
+.logo {
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.1);
 }
 
 .header-icons {
@@ -59,6 +58,12 @@ body {
 .icon--flag {
   width: 36px;
   height: 24px;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.icon--flag:hover {
+  transform: scale(1.1);
 }
 
 .icon--menu {
@@ -66,9 +71,15 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 
+  transition: all .2s ease-in-out;
+
   @media screen and (min-width: 1257px) {
     display: none;
   }
+}
+
+.icon--menu:hover {
+  transform: scale(1.1);
 }
 
 .nav {
@@ -95,9 +106,19 @@ body {
   align-items: center;
 }
 
+.nav__item img {
+  transition: all .2s ease-in-out;
+}
+
+.nav__item img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .nav__link {
   text-decoration: none;
   color: var(--Text-black);
+  transition: all .2s ease-in-out;
 }
 
 .nav__link:hover {
@@ -158,6 +179,7 @@ body {
   align-items: center;
   height: 32px;
   padding: 6px 12px;
+  cursor: pointer;
 }
 
 .page-nav__item--active {
@@ -172,6 +194,11 @@ body {
   font-size: 12px;
   font-weight: 500;
   color: var(--Text-dark-gray);
+  transition: all .2s ease-in-out;
+}
+
+.page-nav__link:hover {
+  transform: scale(1.1);
 }
 
 .page-nav__link--active {
@@ -193,12 +220,25 @@ body {
 .site__nav--icon {
   height: 17px;
   width: 17px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.site__nav--icon:hover {
+  transform: scale(1.1);
 }
 
 .site__nav--text {
   color: var(--Black);
   font-weight: 600;
   font-size: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.site__nav--text:hover {
+  transform: scale(1.1);
+  color: var(--Blue-Base);
 }
 
 .welcome {
@@ -297,6 +337,7 @@ body {
 
 .author__header--image {
   align-self: flex-start;
+  cursor: pointer;
 
   @media screen and (min-width: 1257px) {
     align-self: center;
@@ -309,6 +350,12 @@ body {
   font-weight: 600;
   line-height: 28px;
   color: var(--Text-black);
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.author__header--name:hover {
+color: var(--Blue-Base);
 }
 
 .author-container {
@@ -455,7 +502,7 @@ body {
 
 .card-active {
   @media screen and (min-width: 1257px) {
-    /* border-radius: 0; */
+
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   }
@@ -472,6 +519,7 @@ body {
 }
 
 .card-header__image {
+  cursor: pointer;
   @media screen and (min-width: 1257px) {
     width: 160px;
   }
@@ -494,6 +542,12 @@ body {
   font-weight: 600;
   line-height: 28px;
   color: #262626;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.card__title:hover {
+  color: var(--Blue-Base);
 }
 
 .card__stars {
@@ -517,10 +571,12 @@ body {
   gap: 6px;
   padding-top: 16px;
   color: var(--Blue-Base);
+  cursor: pointer;
 }
 
 .card__show-more--text {
   white-space: nowrap;
+  font-size: 14px;
 }
 
 .card__offer {
@@ -534,6 +590,7 @@ body {
   row-gap: 12px;
   align-self: stretch;
   border-radius: 16px;
+  cursor: pointer;
 
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%232F7EF3FF' stroke-width='4' stroke-dasharray='8' stroke-dashoffset='5' stroke-linecap='square'/%3e%3c/svg%3e");
   border-radius: 16px;
@@ -610,11 +667,16 @@ body {
   font-weight: 600;
   line-height: 28px;
   white-space: nowrap;
+  /* transition: all .2s ease-in-out; */
 
   @media screen and (min-width: 1257px) {
     align-self: stretch;
     height: 50%;
   }
+}
+
+.card__button:hover {
+  animation: tilt-shaking 0.2s infinite; 
 }
 
 .button-green {
@@ -859,11 +921,13 @@ h3 {
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  cursor: pointer;
 }
 
 .less-desktop {
   padding-top: 16px;
   align-self: start;
+  font-size: 14px;
 }
 
 .card-best {
